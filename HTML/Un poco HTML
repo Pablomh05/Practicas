@@ -1,0 +1,96 @@
+============================================================
+       APUNTES BÁSICOS DE HTML5 PARA LARAVEL 12
+============================================================
+
+1. ESTRUCTURA BÁSICA (Layout)
+------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Título de la Web</title>
+</head>
+<body>
+    </body>
+</html>
+
+2. TEXTO Y TÍTULOS
+------------------------------------------------------------
+<h1>Título Nivel 1</h1> (Solo uno por página, el más importante)
+<h2>Título Nivel 2</h2>
+<h3>Título Nivel 3</h3>
+<p>Este es un párrafo de texto.</p>
+<strong>Texto en negrita</strong>
+<em>Texto en cursiva</em>
+<br> (Salto de línea)
+<hr> (Línea horizontal divisoria)
+
+3. ENLACES Y NAVEGACIÓN
+------------------------------------------------------------
+<a href="URL">Texto del enlace</a>
+
+En Laravel (Blade):
+<a href="{{ route('nombre.ruta') }}">Ir a Tareas</a>
+
+4. LISTAS
+------------------------------------------------------------
+Lista de puntos (Desordenada):
+<ul>
+    <li>Elemento 1</li>
+    <li>Elemento 2</li>
+</ul>
+
+Lista numerada (Ordenada):
+<ol>
+    <li>Paso 1</li>
+    <li>Paso 2</li>
+</ol>
+
+5. TABLAS (Para mostrar datos de MySQL)
+------------------------------------------------------------
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Pablo</td>
+        </tr>
+    </tbody>
+</table>
+
+6. FORMULARIOS (Clave para enviar datos a Controladores)
+------------------------------------------------------------
+<form action="/enviar" method="POST">
+    @csrf  <label>Nombre:</label>
+    <input type="text" name="nombre"> <label>Contraseña:</label>
+    <input type="password" name="password">
+
+    <label>Comentario:</label>
+    <textarea name="comentario"></textarea>
+
+    <button type="submit">Enviar</button>
+</form>
+
+7. ATRIBUTOS IMPORTANTES
+------------------------------------------------------------
+class="..." -> Para dar estilos (Bootstrap). Se puede repetir.
+id="..."    -> Identificador único para un solo elemento.
+name="..."   -> El nombre del campo que recibirá Laravel.
+src="..."    -> Ruta de una imagen.
+href="..."   -> Ruta de un enlace.
+placeholder  -> Texto de ayuda dentro de un input.
+
+8. CONTENEDORES
+------------------------------------------------------------
+<div>  -> Bloque genérico (para separar secciones).
+<span> -> Para trozos de texto pequeños dentro de una línea.
+
+============================================================
+Tip Pro: En Laravel, usa siempre @csrf en tus formularios 
+para evitar el error 419 (Page Expired).
+============================================================

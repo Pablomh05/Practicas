@@ -1,0 +1,73 @@
+============================================================
+       APUNTES BÁSICOS DE CSS PARA LARAVEL 12
+============================================================
+
+1. SINTAXIS BÁSICA
+------------------------------------------------------------
+selector {
+    propiedad: valor;
+}
+
+Ejemplo:
+p {
+    color: red;
+}
+
+2. SELECTORES PRINCIPALES
+------------------------------------------------------------
+Etiqueta ->  h1 { ... }       (Afecta a todos los <h1>)
+Clase    ->  .mi-boton { ... } (Afecta a elementos con class="mi-boton")
+ID       ->  #menu { ... }    (Afecta solo al elemento con id="menu")
+
+3. COLORES Y FONDO
+------------------------------------------------------------
+color: blue;                /* Color del texto */
+background-color: #f4f4f4;  /* Color de fondo (Hexadecimal) */
+opacity: 0.5;               /* Transparencia (0 a 1) */
+
+4. TEXTO Y FUENTES
+------------------------------------------------------------
+font-size: 16px;            /* Tamaño de letra */
+font-weight: bold;          /* Negrita */
+text-align: center;         /* Centrar texto: left, right, center, justify */
+text-decoration: none;      /* Quitar el subrayado de los enlaces <a> */
+font-family: Arial, sans-serif; /* Tipo de letra */
+
+5. EL MODELO DE CAJA (Box Model)
+------------------------------------------------------------
+width: 100px;               /* Ancho */
+height: 100px;              /* Alto */
+padding: 10px;              /* Espacio interno (dentro del borde) */
+margin: 20px;               /* Espacio externo (fuera del borde) */
+border: 1px solid black;    /* Borde: grosor, estilo y color */
+
+6. POSICIONAMIENTO MODERNO (Flexbox)
+------------------------------------------------------------
+display: flex;              /* Activa el modo flexible */
+justify-content: center;    /* Centra hijos horizontalmente */
+align-items: center;        /* Centra hijos verticalmente */
+flex-direction: column;     /* Pone los elementos uno debajo de otro */
+
+7. IMPORTANTE EN LARAVEL: ¿DÓNDE PONERLO?
+------------------------------------------------------------
+- En la carpeta: public/css/estilos.css
+- En el Layout Maestro (<head>):
+  <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
+
+- O directo en la vista (solo para pruebas):
+  <style>
+      .alerta-especial { color: orange; }
+  </style>
+
+8. UNIDADES DE MEDIDA
+------------------------------------------------------------
+px -> Píxeles (fijo)
+%  -> Porcentaje (relativo al tamaño del padre)
+rem -> Relativo al tamaño de fuente de la página (ideal para móviles)
+vh / vw -> Relativo al alto o ancho de la pantalla completa
+
+============================================================
+TIP PRO: Usa el "Inspector de elementos" del navegador 
+(F12 o Clic derecho > Inspeccionar) para probar colores y 
+márgenes en tiempo real antes de escribir el código.
+============================================================
